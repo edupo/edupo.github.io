@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %} 
+
+    <div id="main" class="alt"> <div class="inner">
+
+    <h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
+    <ul class="posts">
+    {% for post in page.posts %}
+        <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    </div></div>
+
+</body>
+
+</html>

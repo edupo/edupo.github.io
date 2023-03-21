@@ -1,0 +1,104 @@
+---
+layout: page
+status: publish
+published: true
+title: Functions
+author:
+  display_name: Eduardo Lezcano
+  login: edupo
+  email: contact@eduardolezcano.com
+  url: http://eduardolezcano.com
+author_login: edupo
+author_email: contact@eduardolezcano.com
+author_url: http://eduardolezcano.com
+wordpress_id: 533
+wordpress_url: http://eduardolezcano.com/?page_id=533
+date: '2017-01-29 08:53:33 +0100'
+date_gmt: '2017-01-29 07:53:33 +0100'
+categories: []
+tags: []
+comments: []
+---
+<p>Functions in make are called with the same syntax as the variables using <code>$(</code> and <code>)</code> sequence, the arguments are passed after a space in a comma-separated-list.</p>
+<pre><code>$(wordlist one two three,two,three)
+</code></pre>
+<p>They can be used in the same contexts than variables (as prerequisites, inside recipes, as targets...) and you can nest as many as you want, so you can do some pretty nice processes.</p>
+<pre><code>$ cat Makefile
+path := $(home)/output
+binaries := $(addprefix $(path),$(basename $(wildcard %.c))
+default:
+    @echo $(wildcard %.c)
+    @echo $(binaries)
+
+$ make
+program1.c program2.c
+/home/edupo/output/program1 /home/edupo/output/program2
+</code></pre>
+<p>Let see the binaries variable assignment more closer.</p>
+<pre><code> binaries := $(addprefix $(path),$(basename $(wildcard %.c))
+</code></pre>
+<p>To understand how this statement works we need to read it from the most inner parenthesis.</p>
+<ul>
+<li>The first function executed is <code>wildcard</code> and it's argument is <code>%.c</code>. This function locates all the files in the <em>current working directory</em> that match the argument, so it will be locating all C source files available in the current directory.
+<p>You can use <code>wildcard</code> to locate files inside folders relative to your current path. Just imagine that the stem (<code>%</code>) will be replacing the name of the file you are looking for, so if your lookup string looks like <code>../subfolder/%.c</code> it will do exactly what you are thinking.</p>
+<p>This is a powerful characteristic, but I do not recommend to use it because you can over complicate your <em>Makefile</em>. The best practice is <strong>creating a <em>Makefile</em> per folder</strong> you have on your structure; If your <em>Makefiles</em> are automating a build process then make sense that every folder should create a binary (a library or executable) so that if one of such is a prerequisite of your final application <code>make</code> can call itself onto the desired folder.</p>
+<p>Apparently the function has found in the example 2 source files:</p>
+<pre><code>program1.c program2.c
+</code></pre>
+</li>
+<li>The second function <code>basename</code> is extracting from each word all but the file name. Even if the file name contains an extension you will be filtering that. The path is kept so make sure to remove it using <code>notdir</code> if you are only interested on the file name.
+<p>Looking to our example the string at this point should look like:</p>
+<pre><code> program1 program2
+</code></pre>
+</li>
+<li>Finally comes the <code>addprefix</code> function that will add the path to each word. If you want to prepend strings in make you can also use <em>variable assignments</em>
+<pre><code> var := Hello, $(world)
+</code></pre>
+<p>But when your variables may contain many words <strong>this type of assignments should be avoided</strong> for more than static parameters definition.</p>
+<p>After the execution of this part of the code you will get the desired final string:</p>
+<pre><code>  /home/edupo/output/program1 /home/edupo/output/program2
+</code></pre>
+</li>
+</ul>
+<p>As you can see <code>make</code> is powerful processing strings in many ways. And not only that. You can display custom messages, break execution, doing loops through an array of words and much more.</p>
+<p>You have a great <a href="https://www.gnu.org/software/make/manual/html_node/Functions.html#index-functions">reference</a> about make functions on GNU project project but after playing a little with them I recommend to take a look to this <a href="https://github.com/edupo/make-cheatsheet">cheatsheet</a>.</p>
+<p>Anyway, using the function table of the cheatsheets append here a summary of all the functions for your reference, descriptions are minimized.</p>
+<p>[table]<br />
+Function,Description<br />
+"$(subst f,to,t)",Replace f with to in t<br />
+"$(patsubst p,r,t) $(t:p=r)",Replace words matching p with r in t<br />
+"$(strip s)",Remove excess spaces from s<br />
+"$(findstring s,t)",Locate s in t<br />
+"$(filter p…,t)",Words in t that match one p words<br />
+"$(filter-out p…,t)",Words in t that don’t match p words<br />
+"$(sort l)","Sort l lexicographically, removes dup."<br />
+"$(word n,t)",Extract the nth word (one-origin) of t<br />
+"$(words t)",Count the number of words in t<br />
+"$(wordlist t,s,e)",List of words in t from s to e<br />
+"$(firstword ns…)",Extract the first word of ns<br />
+"$(lastword ns…)",Extract the last word of ns<br />
+"$(dir ns…)",Directory part of each file name<br />
+"$(notdir ns…)",Non-directory part of each file name<br />
+"$(suffix ns…)",Deletes until the last ‘.’ in every ns<br />
+"$(basename ns…)",Base name (no suffix) in every ns<br />
+"$(addsuffix sf,ns…)",Append sf to each word in ns<br />
+"$(addprefix pf,ns…)",Prepend pf to each word in ns<br />
+"$(join l1,l2)",Join two parallel lists of words<br />
+"$(wildcard p…)",Find files matching a pattern (not ‘%’)<br />
+"$(realpath ns…)","Absolute name (no .,  ..,  nor symlinks)"<br />
+"$(abspath ns…)",Absolute name (no. or ..)Preserves symlinks<br />
+"$(error t…)",make fatal error with the message t<br />
+"$(warning t…)",make warning with the message t<br />
+"$(info t…)",make info with the message t<br />
+"$(shell c)","Execute a shell cmd, returns output"<br />
+"$(origin v)",Origin of variable v<br />
+"$(flavor v)",Flavor of variable v<br />
+"$(foreach v,w,t)","Evaluate t with v bound to each word in w, and concatenate the results"<br />
+"$(if c,then-part[,else-part])",Evaluates c; if it’s non-empty substitute by then-part otherwise by else-part<br />
+"$(or c1[,c2[,c3…]])",Evaluate each cN; substitute the first non-empty expansion<br />
+"$(and c1[,c2[,c3…]])",Evaluate each cN; if any is empty substitution is empty. Expansion of the last condition otherwise<br />
+"$(call v,p,…)","Evaluates v replacing any references to $(1), $(2) with the first, second, etc. p values"<br />
+"$(eval t)",Evaluate t and read the results as makefile commands<br />
+"$(file op f,t)",Open the file f using mode op and write t to that file<br />
+"$(value v)","Evaluates v, with no expansion"<br />
+[/table]</p>

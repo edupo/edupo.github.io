@@ -1,0 +1,50 @@
+---
+layout: page
+status: publish
+published: true
+title: Make introduction
+author:
+  display_name: Eduardo Lezcano
+  login: edupo
+  email: contact@eduardolezcano.com
+  url: http://eduardolezcano.com
+author_login: edupo
+author_email: contact@eduardolezcano.com
+author_url: http://eduardolezcano.com
+wordpress_id: 401
+wordpress_url: http://eduardolezcano.com/?page_id=401
+date: '2017-01-14 16:52:20 +0100'
+date_gmt: '2017-01-14 15:52:20 +0100'
+categories: []
+tags: []
+comments: []
+---
+<h1><em>Make</em></h1>
+<p>Is a generic utility to update files that are derived from other files. The update happens comparing the modification dates of the different files and their relationships, described in a <em>makefile</em>... <strong>What a description!</strong> Very technic, isn´t it?</p>
+<p><em>Make</em> was one of the first tools I learned when I started in the Linux world, and right now is one of the most used by me, directly or indirectly... I need to recognize that the process of learning <em>make </em>was <strong>painful and slow</strong>. Full of questions and with the only help of huge <a href="https://www.gnu.org/software/make/manual/make.html">manuals</a> really detailed, but also really technical. Now I appreciate those manuals that gets you to the point very fast, but I missed some kind of easy introduction or manual. And this is the purpose of this page! I want to give to the world a little of what I get, and <em>make</em> it easy for the people to understand this tool that is often considered worthless or too expensive to learn in favor of other "easier" solutions that are really not standard. (<a href="http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html"><em>make</em> is</a>)</p>
+<p>I hope this small introduction helps you to avoid the pain and allows you to see what a beautiful tool <em>make</em> is! Let me know in the comments if you like this content and you would like to see more like this.</p>
+<h2>What is <em>make</em>?</h2>
+<p>When you type on the command prompt you are doing some kind of task using some kind of logic, isn't it? Well, make is basically made for that, but without<em> you</em>. So <strong>automation</strong> is the big <em>why</em> on the equation. But let's do a proper explanation that will help you to understand many of the more advance concepts we will be looking to in this introduction.</p>
+<p>Ok, think you become the <em>make</em> program. Let's also imagine that <em>make</em> program (in this case you) is being used for preparing food recipes...<br />
+Let's imagine that <strong><em>make </em>is a chef</strong>, so... you are a chef.<br />
+What do you need in order to prepare a nice tomato soup? Well, you will need tomatoes! That will be your main<strong> ingredient</strong> isn't it? You will need some other ingredients indeed, but more important you will need <strong>tools</strong>: A knife to peel the tomatoes  and a blender to <em>make</em> them puree. Do we miss something to do a nice tomato soup? Well, we need a good<strong> <a href="http://www.jamieoliver.com/recipes/vegetables-recipes/tomato-soup/">recipe</a></strong>! The difference between a good soup and a bad soup depends on everything, but the recipe you use determines <em>what </em>you are doing. If you don't follow a recipe you may do tomato slices or a salad, but not tomato soup.</p>
+<ul>
+<li><strong>Ingredients</strong> = files and in general <strong><em>any</em> data source</strong>.</li>
+<li><strong>Tools</strong> = the tools you require for doing a job: a compiler, a parser, a beutifier, a compressor... Basically <strong>any program</strong>.</li>
+<li><strong>Recipe </strong>= basically that is what a <em>makefile </em>is.</li>
+</ul>
+<h2>How <em>make</em> works?</h2>
+<p>Now you know what is <em>make</em> and you have a nice simile you may wonder: how does it actually works? Is just like a bash script? What is the difference? And why a <em>makefile </em>looks so different to any programming language?</p>
+<p>Ok, <em>make </em>is an interpreter for <em>makefiles</em>. When you type <em>make </em>on your console the program will look into your current working directory for a file called <em>Makefile</em> (other names may be used, but that is the default). That <em>Makefile </em>will be interpreted by <em>make </em>and applied somehow to your current directory. So <em>make </em><strong>is a kind of language</strong>. But is not a script.</p>
+<p><em>Make </em>language is defined by 2 main elements: <em>variables</em> and <em>rules</em>.</p>
+<h3>Variables</h3>
+<p><em>Variables</em> are like any other language, you can assign them, modify them and pass them around. But there is only one type of <em>variable </em>in <em>make</em>: <strong>string</strong><em>. </em>Everything in make is a string, there are no numbers to control loops or to store numeric data because <em>make </em>does not do <em>any </em>numeric calculation. Thinking the cooking simile: Every recipe lists all the ingredients and quantities, but you don't need to do calculations with them! Any word of a recipe may be considered a variable: <em>tomatoes, 500g, oil...</em> Even tools may be variables: <em>knife, blender, pan...</em></p>
+<h3>Rules</h3>
+<p><em>Rules</em> are the difference with any other language. <strong><em>Rules</em> defines relationships</strong> between files as recipes defines relationships between tools and ingredients: <em>Take the tomatoes and use the blender to get a uniform mix.<br />
+</em>It is as easy as that!<br />
+<em>To get a zip file take the desired file and run 'zip' specifying the file as an argument.</em></p>
+<h3>Basic make process</h3>
+<p>Now, <em>make</em> works reading your <em>variables</em> and <em>rules</em> from your <em>makefile </em>and then it applies just the required changes to the state of the system based on the modification dates of every file. Meaning that if a file that depends on other (say a binary that is built from a source) will not be processed if the first is older than the second. Basically if you modify a source file it related binary will be rebuilt but if you execute <em>make </em>a second time the binary will not be rebuilt.</p>
+<p>There are other details about <em>make</em> that affect how <em>makefiles </em>needs to be written, but those aren't in the scope of this introduction. I plan to write more in detail tutorials about <em>make</em> and other tools in a future, so do not hesitate to subscribe to my page!</p>
+<h2>Just to finish: my personal experience</h2>
+<p>I use <em>make</em> in my daily life: Before knowing about other projects I used <em>make</em> to <a href="https://github.com/edupo/home-assistant">automate the initial provisioning of my development environment</a> and it worked more than fine! Basically I was able to generate all the configuration files and even download and install all the required binaries to get my development up and running in a matter of minutes. Also I used it to build (of course!). But where <em>make </em>has the whole potential is in basically any automatic tasks you may imagine. Anything: Cleaning up files, deploying, provisioning, parsing, generating... There are many other tools for automating some processes in an easy way, but <em>make</em> is so <em>agnostic</em> that I can't think on any automation task that can't be run by <em>make </em>under Linux.</p>

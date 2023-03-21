@@ -2,26 +2,27 @@
 <section id="contact">
 	<div class="inner">
 		<section>
-			<form action="https://formspree.io/{{ site.email }}" method="POST">
+			<form action="https://formspree.io/f/xjvdepzo" method="POST">
 				<div class="field half first">
 					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
+					<input type="text" name="name" id="full-name" placeholder="Name" />
 				</div>
 				<div class="field half">
 					<label for="email">Email</label>
-					<input type="text" name="_replyto" id="email" />
+					<input type="email" name="_replyto" id="email-address" placeholder="contact@you.com" required="true" />
 				</div>
 				<div class="field">
 					<label for="message">Message</label>
-					<textarea name="message" id="message" rows="6"></textarea>
+					<textarea name="message" id="message" rows="6" required="true" placeholder="Please, add your message here."></textarea>
 				</div>
 				<ul class="actions">
-					<li><input type="submit" value="Send Message" class="special" /></li>
+					<li><input type="submit" value="Send Message" class="special"/></li>
 					<li><input type="reset" value="Clear" /></li>
 				</ul>
 			</form>
 		</section>
-		<section class="split">
+
+		<!-- <section class="split">
 			<section>
 				<div class="contact-method">
 					<span class="icon alt fa-envelope"></span>
@@ -59,7 +60,7 @@
 					</span>
 				</div>
 			</section>
-		</section>
+		</section> -->
 	</div>
 </section>
 
@@ -70,8 +71,12 @@
 				{% for key_value in site.socials %}
 					{% if key_value[1] %}
 						<li>
-							<a href="{{ key_value[1] }}" class="icon alt fa-{{ key_value[0] | downcase }}" target="_blank" rel="noopener noreferrer" aria-label="{{ key_value[0] }}">
-								<span class="label">{{ key_value[0] }}</span>
+							<a href="{{ key_value[1] }}" class="icon alt" target="_blank" rel="noopener noreferrer" aria-label="{{ key_value[0] }}">
+							<span class="fa-stack fa-2x">
+								<i class="fa-bg fa-solid fa-circle fa-stack-2x"></i>
+								<i class="fa-fg fa-brands fa-solid fa-{{ key_value[0] | downcase }} fa-stack-1x fa-inverse"></i>
+							</span>
+							<!-- <span class="label">{{ key_value[0] }}</span> -->
 							</a>
 						</li>
 					{% endif %}
@@ -79,8 +84,7 @@
 			</ul>
 			<ul class="copyright">
 				<li>&copy; {{ site.title }} {{ site.subtitle }}</li>
-				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li>
+				<li><a href="/thanks.html" target="_blank">My gratitude to all people who place their work in the public domain!</a></li>
 
 			</ul>
 		</div>
@@ -96,3 +100,4 @@
 	<script src="{{ "assets/js/util.js" | absolute_url }}"></script>
 	<!--[if lte IE 8]><script src="{{ "assets/js/ie/respond.min.js" | absolute_url }}"></script><![endif]-->
 	<script src="{{ "assets/js/main.js" | absolute_url }}"></script>
+

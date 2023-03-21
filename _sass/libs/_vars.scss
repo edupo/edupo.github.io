@@ -29,19 +29,53 @@
 	);
 
 // Palette.
+	// $palette: (
+	// 	bg:				    #f1f6f0,
+	// 	bg-alt:				#d5d6db,
+	// 	fg:					#405273,
+	// 	fg-bold:			#303843,
+	// 	fg-light:			#6c81a1,
+	// 	border:				#fdd179,
+	// 	border-bg:			#fee1b8,
+	// 	highlight:			#cae6d9,
+	// 	accent1:			#f2b888,
+	// 	accent2:			#a6b04f,
+	// 	accent3:			#b55945,
+	// 	accent4:			#6c81a1,
+	// 	accent5:			#bcad9f,
+	// 	accent6:			#7a5859,
+	// );
+
+	// $palette: (
+	// 	bg:				    #ffecd6,
+	// 	bg-alt:				#ffd4a3,
+	// 	fg:					#203c56,
+	// 	fg-bold:			#0d2b45,
+	// 	fg-light:			#544e68,
+	// 	border:				#ffaa5e,
+	// 	border-bg:			#ffd4a3,
+	// 	highlight:			#ffaa5e,
+	// 	accent1:			#d08159,
+	// 	accent2:			#8d697a,
+	// 	accent3:			#ffaa5e,
+	// 	accent4:			#e7bda8,
+	// 	accent5:			#baa2ad,
+	// 	accent6:			#ffe0c4,
+	// );
+
 	$palette: (
-		bg:					#242943,
-		bg-alt:				#2a2f4a,
-		fg:					#ffffff,
-		fg-bold:			#ffffff,
-		fg-light:			rgba(244,244,255,0.2),
-		border:				rgba(212,212,255,0.1),
-		border-bg:			rgba(212,212,255,0.035),
-		highlight:			#9bf1ff,
-		accent1:			#6fc3df,
-		accent2:			#8d82c4,
-		accent3:			#ec8d81,
-		accent4:			#e7b788,
-		accent5:			#8ea9e8,
-		accent6:			#87c5a4
+		bg:				    #FEEEE0,
+		bg-alt:				#FCD3AF,
+		fg:					#582841,
+		fg-bold:			#582841,
+		fg-light:			#582841,
+		border:				#F36F38,
+		border-bg:			#FCD7C8,
+		highlight:			#F99E4C,
+		accent1:			#F99E4C,
+		accent2:			#F36F38,
+		accent3:			#EF4648,
+		accent4:			#582841,
+		accent5:			#EF4648,
+		accent6:			#F36F38,
 	);

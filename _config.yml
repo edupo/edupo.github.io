@@ -1,40 +1,48 @@
 # site settings
-title: Forty
-subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
-baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
-author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
+title: Eduardo Lezcano
+subtitle: Blog
+email: contact@eduardolezcano.com 
+description: And this is my personal page
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://eduardolezcano.com" # the base hostname & protocol for your site
+author: Eduardo Lezcano Álvarez
+street_address: 
+city: 
+state: 
+zip_code: 
+country: 
+phone: 
+
+paginate: 12
+paginate_path: "/blog/page:num/"
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 12 
 
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
 socials:
-  GitHub: https://github.com/andrewbanchich
+  GitHub: https://github.com/edupo
   GitLab:
-  Google-Plus: https://plus.google.com/u/0/+AndrewBanchich
+  Google-Plus: 
   Instagram:
-  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-  Twitter: https://twitter.com/andrewbanchich
+  LinkedIn: https://www.linkedin.com/in/eduardolezcano/
+  Twitter: 
   Facebook:
   Slack:
+  Itch-io: https://edupo.itch.io/
 
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [head, body]
+  
 # build settings
 markdown: kramdown
 
 sass:
+  sass_dir: _sass
+  sourcemap: never
   style: compressed
 
 exclude:

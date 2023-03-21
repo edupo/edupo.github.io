@@ -1,0 +1,67 @@
+---
+layout: page
+status: publish
+published: true
+title: Automatic variables
+author:
+  display_name: Eduardo Lezcano
+  login: edupo
+  email: contact@eduardolezcano.com
+  url: http://eduardolezcano.com
+author_login: edupo
+author_email: contact@eduardolezcano.com
+author_url: http://eduardolezcano.com
+wordpress_id: 475
+wordpress_url: http://eduardolezcano.com/?page_id=475
+date: '2017-01-28 14:34:51 +0100'
+date_gmt: '2017-01-28 13:34:51 +0100'
+categories: []
+tags: []
+comments: []
+---
+<p>Automatic variables are an advance feature you may use <strong>inside your rules</strong>. These variables expand to very specific values regarding data available on rule's header.</p>
+<p>[table th="0"]<br />
+$@,$(@D),$(@F),Target's name<br />
+$&lt;,$(&lt;D),$(&lt;F), First prerequisites<br />
+$^,$(^D),$(^F), All prerequisites without duplicates<br />
+$*,$(*D),$(*F), Implicit rule stem<br />
+[/table]</p>
+<p>Note D and F variations of the variable are actually splitting every word in Directory and File parts:</p>
+<pre><code>$ cat Makefile
+/tmp/file:
+    @echo "The directory is $(@D)"
+    @echo "The file is $(@F)"
+$ make
+The directory is /tmp
+The file is file
+</code></pre>
+<p>Let's see the those in action with a complete example. Imagine you want to build a C program which needs one source file and at least 2 header files.     $ tree<br />
+    .<br />
+    ├── header1.h<br />
+    ├── header2.h<br />
+    └── program.c</p>
+<p>So to build the program you need to generate a couple of implicit rules (You may use the <a href="https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html#Catalogue-of-Rules">built-in rules</a> but you are stubborn and a DIY guy) so:     $ cat Makefile</p>
+<pre><code>headers:= header1.h header2.h
+
+program: program.o
+    $(CC) $(CFLAGS) -o $@ $&lt;
+
+program.o: program.c $(headers)
+    $(CC) -c $(CFLAGS) -o $@ $&lt;
+
+$ make program
+cc -c  -o program.o program.c
+cc  -o program program.o
+</code></pre>
+<p>This example is a little more complex so I'm going to take a closer look to every part of the line. - We decided to store all header file names in a variable so we can use it later. This is an easy task.     headers:= header1.h header2.h<br />
+- Now we define our first target: program which has a prerequisite on it's object.     program: program.o<br />
+        $(CC) $(CFLAGS) -o $@ $&lt;;</p>
+<p>Here we used 2 automatic variables. And the expansion of the recipe looks like:     cc  -o program program.o</p>
+<p>As you can see the automatic variables has done their work pretty well!<br />
+- Last we can see the rule for making the object file and it's output fits what was described.</p>
+<pre><code>program.o: program.c $(headers)
+    $(CC) -c $(CFLAGS) -o $@ $&lt;
+
+cc -c  -o program.o program.c
+</code></pre>
+<p>Make is mixing that information together an executing the proper commands in the proper order. But for a better explanation about how rules works see the section dedicated to rules.</p>

@@ -1,0 +1,84 @@
+---
+layout: page
+status: publish
+published: true
+title: Variables
+author:
+  display_name: Eduardo Lezcano
+  login: edupo
+  email: contact@eduardolezcano.com
+  url: http://eduardolezcano.com
+author_login: edupo
+author_email: contact@eduardolezcano.com
+author_url: http://eduardolezcano.com
+wordpress_id: 441
+wordpress_url: http://eduardolezcano.com/?page_id=441
+date: '2017-01-28 13:06:33 +0100'
+date_gmt: '2017-01-28 12:06:33 +0100'
+categories: []
+tags: []
+comments: []
+---
+<p>All variables in <em>make</em> are <em>strings</em> and is possible to <em>expand</em> variables using <code>$(</code> <code>)</code> sequence.</p>
+<pre><code>$(my_bar) # This will expand to 'my_bar' value
+</code></pre>
+<p>For example:</p>
+<pre><code>$ cat Makefile hola := Hello default: @echo "$(hola) world!" $ make Hello world!
+</code></pre>
+<h1 id="definingvariables">Defining variables</h1>
+<p>Variables get defined in different ways: - <strong>Environmental variables</strong> are loaded as <em>make</em> variables.</p>
+<pre><code>$ cat Makefile default: @echo "I'm $(USER)" $ make I'm edupo
+</code></pre>
+<ul>
+<li>Variable values can be <strong>overridden by the command line</strong>.
+<pre><code>$ make USER="not me" I'm not me
+</code></pre>
+<p>This is useful for example for specifying your target or any parameter from your CI.</p>
+</li>
+<li>Some variables are <strong>automatically generated when inside a rule</strong>.
+<pre><code>$ cat Makefile default:
+    @echo "I'm executing $@ target" $ make I'm executing default target
+</code></pre>
+<p>If you are interested on automatic variables there is a reference further on this page.</p>
+</li>
+<li>
+<p>Some variables has been assigned before you even born and they remain <strong>constant</strong>.</p>
+<pre><code>$ cat Makefile default:
+     @echo "I'm compiling C with '$(CC)'" $ make I'm compiling C with 'cc'
+</code></pre>
+<p>Take a look to the <a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html#Implicit-Variables">reference</a> of those variables. You may be familiar with some of them already.</p>
+</li>
+<li>
+<p>Finally you can assign and build variables <strong>inside your <em>Makefile</em></strong>. </p>
+<pre><code>bar # Empty variable (can be used as a flag) 
+
+
+bar = value # Recursively expanded assignment 
+bar := value # Simply expanded assignment 
+bar ::= value # Posix compatible simply expanded 
+
+
+define bar
+This is my multi-line
+variable 
+endef # Multi-line variable assignment override 
+
+
+bar := value2 # Overrides command assign 
+
+
+undefine bar # You can also undefine them
+</code></pre>
+<p>For your mental health if you hesitate when assigning variables use simply expanded assignment <code>:=</code>. The details are explained later.</p>
+</li>
+</ul>
+<h1 id="exportingvariables">Exporting variables</h1>
+<p>Sometimes in your automation adventures you may find useful to export your <em>make</em> variables into the environment where make execute it's commands... Well <code>export</code> is your keyword.</p>
+<pre><code>$ cat Makefile
+export PIP_INDEX_URL:=http://download.zope.org/ppix
+
+tox: pip install tox
+
+$ make pip install tox
+Collecting tox The repository located at download.zope.org is not a trusted or secure host and is being ignored... Blah, blah, blah, I don't want to work...
+</code></pre>

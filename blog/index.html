@@ -1,0 +1,51 @@
+---
+layout: base
+pagination: 
+  enabled: true
+title: Blog
+landing-title: 'Blog'
+description: null
+image: assets/images/library.jpg
+author: null
+show_tile: false
+nav-menu: false
+---
+<!-- Main -->
+<div id="main" class="alt">
+
+<section id="one" class="tiles">
+
+{% for post in paginator.posts %}
+<!-- <p>
+    <b><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></b> | {{ post.date | date: "%b %-d, %Y" }}
+</p> -->
+
+  <article>
+    <span class="image">
+      <img src="{{ post.image  | relative_url }}" alt="{{ post.title }}" />
+    </span>
+    <header class="major">
+      <h3><a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a></h3>
+      {% if post.description %}
+      <p>{{ post.description }}</p>
+      {% endif %}
+      <p>{{ post.date | date_to_string }}</p>
+    </header>
+  </article>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+</section>
+<div class="inner">
+<ul class="actions fit">
+  {% if paginator.previous_page %}
+	<li><a class="button fit" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a></li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li><a class="button fit" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a></li>
+  {% endif %}
+</ul>
+{% endif %}
+</div>
+
+</div>
