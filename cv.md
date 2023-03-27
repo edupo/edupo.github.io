@@ -21,25 +21,14 @@ nav-menu: true
 
         <p>Over 13 years of experience in software production.</p>
         <p>I help teams to reduce costs and achieve success through planning, automation and technology.</p>
+        <ul class="actions">
+            <li><a href="#experience" class="button next scrolly">Experience</a></li>
+            <li><a href="#education" class="button next scrolly">Education</a></li>
+            <li><a href="#skills" class="button next scrolly">Skills</a></li>
+        </ul>
 
     
 <!-- Summary -->
-</div></section>
-
-<section id="education"><div class="inner">
-    <!-- <hr class="major" /> -->
-    <h2>Education</h2>
-    <hr class="minor" />
-    <div class="row">
-        <div class="8u 12u$(small)">
-            <h3>Technical Telecommunication Engineer</h3>
-            <p>Electronic systems specialization. Instrumentation and automation path. Vodafone scholarship.</p>
-        </div>
-        <div class="4u 12u$(small)">
-            <p><i class="fa-solid fa-calendar"></i> Jun.2010</p>
-            <p><i class="fa-solid fa-location-dot"></i> U.P.M. (Polytechnic University of Madrid)</p>
-        </div>
-    </div>
 </div></section>
 
 <section id="experience"><div class="inner">
@@ -49,25 +38,52 @@ nav-menu: true
 
     <div class="row">
         <div class="8u 12u$(small)">
-            <h3 id="validation">Senior software engineer</h3>
-            <p> I am currently employed as a member of the automotive semiconductor validation team, where I am engaged in facilitating the transformation of their operational procedures through the implementation of automation and software development. Specifically, I am the proprietor of the software framework utilized for test automation and validation.</p>
-            <p>In addition, I am involved in developing the requisite infrastructure for the integration of test code into ATE continuously. Leveraging my extensive experience in the field, I am actively engaged in modernizing the team's practices and tools to promote agility and enhance operational efficiency.</p>
-            <p>As part of my responsibilities, I am also required to exercise my coaching and team-leading competencies to assist the team members and foster the acquisition of new knowledge across various roles.</p>
+            <h3 id="devops">DevOps engineer</h3>
+            <p>As a DevOps engineer, I was not just responsible for deploying internal applications and ensuring their smooth operation. I was also part of the driving force behind the cultural transformation that took place within the organization. I was passionate about promoting a collaborative and quality-focused culture, and I worked tirelessly to instill these values in every team member.</p>
+            <p>In order to achieve this, I took a hands-on approach, working closely with development teams to understand their unique needs and challenges. I then helped them adopt the latest CICD and standardization best practices, while also providing guidance and support along the way. This approach was highly effective, and it helped to significantly reduce the time required for testing and deployment, while also improving code quality across the organization.</p>
+            <p>But for me, this job was more than just a technical role. It was a chance to be a catalyst for positive change, and to help shape the future of the organization. I am excited to continue building on this experience in future roles, and I am confident that the skills and knowledge that I have gained will serve me well in any technical or leadership position that I may hold in the future.</p>
         </div>
         <div class="4u 12u$(small)">
-            <p><i class="fa-solid fa-calendar"></i> Sep.2018 to present</p>
+            <p><i class="fa-solid fa-calendar"></i> Sep.2022 to present</p>
+            <p><i class="fa-solid fa-location-dot"></i> NXP Semiconductors - Eindhoven</p>
+            <p><i class="fa-solid fa-laptop"></i> Gitlab, Ansible, Satellite, RedHat Enterprise Linux, AWS, Terraform, Hashicorp Vault, <code>python</code>, Kubernetes, Helm, <code>docker</code> and <code>shell</code></p>
+            <p><i class="fa-solid fa-graduation-cap"></i><a href="https://www.credly.com/badges/965a8d6a-3930-4c24-b27e-cc8677b8ebfc/public_url"> Certified SAFe 5 Practitioner</a><img class="badge" src="/assets/images/cert_safe_practitioner.png"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="8u 12u$(small)">
+            <h3 id="validation">Senior software engineer</h3>
+            <p>I was employed as a member of the automotive semiconductor validation team, where I facilitated the transformation of their operational procedures through the implementation of automation and software development. Specifically, I was the proprietor of the software framework utilized for test automation and validation.</p>
+            <p>In addition, I was involved in developing the requisite infrastructure for the integration of test code into ATE continuously. Leveraging my extensive experience in the field, I was actively engaged in modernizing the team's practices and tools to promote agility and enhance operational efficiency.</p>
+
+            <p>As part of my responsibilities, I also exercised my coaching and team-leading competencies to assist the team members and foster the acquisition of new knowledge across various roles.</p>
+        </div>
+        <div class="4u 12u$(small)">
+            <p><i class="fa-solid fa-calendar"></i> Sep.2018 to Sep.2022</p>
             <p><i class="fa-solid fa-location-dot"></i> NXP Semiconductors - Eindhoven</p>
             <p><i class="fa-solid fa-laptop"></i> <code>python</code>, Kubernetes, <code>docker</code>, <code>jenkins</code>, <code>c</code>, <code>shell</code>, instrumentation, database and reporting.</p>
+
+            <p><i class="fa-solid fa-graduation-cap"></i>
+            <a href="https://skillsoft.digitalbadges.skillsoft.com/76b70a0a-f3e6-4594-8748-75961bb4254d">Pythonista to Python Master</a>
+            <img class="badge" src="/assets/images/cert_python_master.png">,
+            <a href="https://skillsoft.digitalbadges.skillsoft.com/b45ecd0b-b50b-4e95-8060-9038515b0eb4">Python Novice to Pythonista</a>
+            <img class="badge" src="/assets/images/cert_pythonista.png">,
+            <a href="/assets/files/cert_skills_town_6.pdf">SkillsTown iMBA-start - Innovation in Business</a>,
+            <a href="/assets/files/cert_skills_town_5.pdf">SkillsTown iMBA-start - Introduction to Business Strategy</a>,
+            <a href="/assets/files/cert_skills_town_4.pdf">SkillsTown iMBA-start - Leadership and personality</a> and
+            <a href="/assets/files/cert_skills_town_3.pdf">SkillsTown iMBA-start - Management basics</a>.
+            </p>
         </div>
     </div>
 
     <div class="row">
         <div class="8u 12u$(small)">
             <h3>Senior software engineer</h3>
-            <p>Our team is dedicated to developing innovative, adaptable, and interconnected software solutions that are poised to shape the future of the industry. Our focus is on Industry 4.0 and the Internet of Things (IoT), with an eye towards addressing the unique challenges of these rapidly evolving domains.</p>
+            <p>Our team was dedicated to developing innovative, adaptable, and interconnected software solutions that were poised to shape the future of the industry. Our focus was on Industry 4.0 and the Internet of Things (IoT), with an eye towards addressing the unique challenges of these rapidly evolving domains.</p>
             <p>As the leader of the software automation team, my primary objective was to equip our development teams with the necessary infrastructure and tools to support their success. To this end, we designed and maintained a suite of highly scalable and available services, distributed globally.</p>
-            <p>Through our efforts, we were able to significantly reduce test and release times, with improvements of up to 15 times over previous benchmarks. These services, now relied upon by hundreds of developers across five different countries, facilitate the daily execution of hundreds of builds and tests, enabling early error detection and swift remediation.</p>
-            <p>We also provided training to development teams on various techniques related to continuous integration and delivery, further promoting the culture of excellence and collaboration that underpins our organization's success.</p>
+            <p>Through our efforts, we were able to significantly reduce test and release times, with improvements of up to 15 times over previous benchmarks. These services, which were relied upon by hundreds of developers across five different countries, facilitated the daily execution of hundreds of builds and tests, enabling early error detection and swift remediation.</p>
+            <p>We also provided training to development teams on various techniques related to continuous integration and delivery, further promoting the culture of excellence and collaboration that underpinned our organization's success.</p>
         </div>
         <div class="4u 12u$(small)">
             <p><i class="fa-solid fa-calendar"></i> Sep.2015 to Sep.2018</p>
@@ -110,6 +126,22 @@ nav-menu: true
         </div>
     </div>
 
+</div></section>
+
+<section id="education"><div class="inner">
+    <!-- <hr class="major" /> -->
+    <h2>Education</h2>
+    <hr class="minor" />
+    <div class="row">
+        <div class="8u 12u$(small)">
+            <h3>Technical Telecommunication Engineer</h3>
+            <p>Electronic systems specialization. Instrumentation and automation path. Vodafone scholarship.</p>
+        </div>
+        <div class="4u 12u$(small)">
+            <p><i class="fa-solid fa-calendar"></i> Jun.2010</p>
+            <p><i class="fa-solid fa-location-dot"></i> U.P.M. (Polytechnic University of Madrid)</p>
+        </div>
+    </div>
 </div></section>
 
 <section id="skills"><div class="inner">
