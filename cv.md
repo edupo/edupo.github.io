@@ -47,7 +47,16 @@ nav-menu: true
             <p><i class="fa-solid fa-calendar"></i> Sep.2022 to present</p>
             <p><i class="fa-solid fa-location-dot"></i> NXP Semiconductors - Eindhoven</p>
             <p><i class="fa-solid fa-laptop"></i> Gitlab, Ansible, Satellite, RedHat Enterprise Linux, AWS, Terraform, Hashicorp Vault, <code>python</code>, Kubernetes, Helm, <code>docker</code> and <code>shell</code></p>
-            <p><i class="fa-solid fa-graduation-cap"></i><a href="https://www.credly.com/badges/965a8d6a-3930-4c24-b27e-cc8677b8ebfc/public_url"> Certified SAFe 5 Practitioner</a><img class="badge" src="/assets/images/cert_safe_practitioner.png"></p>
+            <ul class="alt">
+            <li>
+            <img class="badge" src="/assets/images/cert_awssa_ass.png">
+            <a href="https://www.credly.com/badges/6f52394c-369e-40fa-b322-ff3dea8f7c24/public_url"> AWS Certified Solution Architect - Associate</a>
+            </li>
+            <li>
+            <img class="badge" src="/assets/images/cert_safe_practitioner.png">
+            <a href="https://www.credly.com/badges/965a8d6a-3930-4c24-b27e-cc8677b8ebfc/public_url"> Certified SAFe 5 Practitioner</a>
+            </li>
+            </ul>
         </div>
     </div>
 
@@ -64,22 +73,26 @@ nav-menu: true
             <p><i class="fa-solid fa-location-dot"></i> NXP Semiconductors - Eindhoven</p>
             <p><i class="fa-solid fa-laptop"></i> <code>python</code>, Kubernetes, <code>docker</code>, <code>jenkins</code>, <code>c</code>, <code>shell</code>, instrumentation, database and reporting.</p>
 
-            <p><i class="fa-solid fa-graduation-cap"></i>
-            <a href="https://skillsoft.digitalbadges.skillsoft.com/76b70a0a-f3e6-4594-8748-75961bb4254d">Pythonista to Python Master</a>
-            <img class="badge" src="/assets/images/cert_python_master.png">,
-            <a href="https://skillsoft.digitalbadges.skillsoft.com/b45ecd0b-b50b-4e95-8060-9038515b0eb4">Python Novice to Pythonista</a>
-            <img class="badge" src="/assets/images/cert_pythonista.png">,
-            <a href="/assets/files/cert_skills_town_6.pdf">SkillsTown iMBA-start - Innovation in Business</a>,
-            <a href="/assets/files/cert_skills_town_5.pdf">SkillsTown iMBA-start - Introduction to Business Strategy</a>,
-            <a href="/assets/files/cert_skills_town_4.pdf">SkillsTown iMBA-start - Leadership and personality</a> and
-            <a href="/assets/files/cert_skills_town_3.pdf">SkillsTown iMBA-start - Management basics</a>.
-            </p>
+            <ul class="alt">
+            <li>
+                <img class="badge" src="/assets/images/cert_python_master.png">
+                <a href="https://skillsoft.digitalbadges.skillsoft.com/76b70a0a-f3e6-4594-8748-75961bb4254d">Pythonista to Python Master</a>
+            </li>
+            <li>
+                <img class="badge" src="/assets/images/cert_pythonista.png">
+                <a href="https://skillsoft.digitalbadges.skillsoft.com/b45ecd0b-b50b-4e95-8060-9038515b0eb4">Python Novice to Pythonista</a>
+            </li>
+            <li><a href="/assets/files/cert_skills_town_6.pdf">SkillsTown iMBA-start - Innovation in Business</a></li>
+            <li><a href="/assets/files/cert_skills_town_5.pdf">SkillsTown iMBA-start - Introduction to Business Strategy</a></li>
+            <li><a href="/assets/files/cert_skills_town_4.pdf">SkillsTown iMBA-start - Leadership and personality</a></li>
+            <li><a href="/assets/files/cert_skills_town_3.pdf">SkillsTown iMBA-start - Management basics</a></li>
+            </ul>
         </div>
     </div>
 
     <div class="row">
         <div class="8u 12u$(small)">
-            <h3>Senior software engineer</h3>
+            <h3>Software engineer</h3>
             <p>Our team was dedicated to developing innovative, adaptable, and interconnected software solutions that were poised to shape the future of the industry. Our focus was on Industry 4.0 and the Internet of Things (IoT), with an eye towards addressing the unique challenges of these rapidly evolving domains.</p>
             <p>As the leader of the software automation team, my primary objective was to equip our development teams with the necessary infrastructure and tools to support their success. To this end, we designed and maintained a suite of highly scalable and available services, distributed globally.</p>
             <p>Through our efforts, we were able to significantly reduce test and release times, with improvements of up to 15 times over previous benchmarks. These services, which were relied upon by hundreds of developers across five different countries, facilitated the daily execution of hundreds of builds and tests, enabling early error detection and swift remediation.</p>
